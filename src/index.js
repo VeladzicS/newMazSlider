@@ -1,4 +1,4 @@
-import "jQuery";
+import "jquery";
 import "popper.js";
+import "./js/slider";
 import "./main.scss";
-console.log("Everything worksss yaaaayyya");
