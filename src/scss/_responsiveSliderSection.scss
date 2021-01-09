@@ -1,40 +1,30 @@
-/* RESPONSIVE CSS */
-
-@media only screen and (max-width: $bp-medium) {
-  .wrapper {
-    padding: 5rem 0;
-  }
-  .container {
-    grid-template-rows: 30rem 1fr;
-
-    &__left {
-      grid-row: 2 / -1;
-      grid-column: 1 / -1;
-      margin-right: 1rem;
+@media only screen and (max-width: $bp-wide-3) {
+  .sliderSectionContainer__left {
+    height: 44rem;
+    @media only screen and (max-width: $bp-small-2) {
+      height: 34rem;
     }
+    .slider__img {
+      height: 20rem;
+      @media only screen and (max-width: $bp-small-2) {
+        height: 15rem;
+      }
+    }
+  }
+  .sliderSectionContainer__right {
+    .infoTitle {
+      font-size: 2rem;
+    }
+    .infoText {
+      font-size: 1.4rem;
+    }
+  }
+}
 
-    &__right {
-      grid-row: 1 / 2;
-      grid-column: 1 / -1;
+@media only screen and (max-width: $bp-large) {
+  .sliderSectionContainer__right {
+    .infoTitle {
       text-align: center;
-      margin: 0 1rem;
     }
   }
 }
-
-@media only screen and (max-width: $bp-small) {
-  .container {
-    grid-template-rows: 39rem 1fr;
-  }
-}
-@media only screen and (max-width: $bp-small-2) {
-  .container {
-    grid-template-rows: 44rem 1fr;
-  }
-}
-@media only screen and (max-width: $bp-small-5) {
-  .container {
-    grid-template-rows: 46rem 1fr;
-  }
-}
-/* RESPONSIVE CSS END */

@@ -1,0 +1,11 @@
+.homepage--template {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+}
+
+.container-custom {
+  max-width: 3000px;
+  margin: 0 auto;
+}

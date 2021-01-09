@@ -1,29 +1,12 @@
-/* SLIDER CSS START */
-
-.wrapper {
-  padding: 15rem 0;
-  max-width: 1950px;
-  margin: 0 auto;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 1fr;
-  column-gap: 10px;
-
+.sliderSectionContainer {
+  margin: 2rem auto;
   &__left {
-    grid-column: 1 / 9;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
     height: 54rem;
-
     .slider {
       width: 100%;
       white-space: nowrap;
       overflow: hidden;
       direction: rtl;
-
       &__ul {
         display: flex;
         align-items: center;
@@ -33,15 +16,11 @@
         padding: 0;
         margin: 0;
       }
-
       &__li {
-        width: 100%;
-
         &:first-child img {
           opacity: 1;
         }
       }
-
       &__img {
         width: auto;
         height: 25rem;
@@ -50,23 +29,12 @@
         opacity: 0.3;
         transition: all 0.3s ease-in-out;
       }
-
-      &__first {
-        grid-column: 1 / -1;
-      }
-
-      &__second {
-        grid-column: 1 / 10;
-      }
     }
-
     .nav {
-      grid-column: 11 / -1;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: flex-end;
-
       &__btn {
         background: transparent;
         border-color: rgba(128, 128, 128, 0.1¸);
@@ -74,28 +42,24 @@
         padding: 0;
         margin: 0.5rem 0;
         cursor: pointer;
-
         &:focus {
           outline: none;
         }
       }
-
       &__img {
         padding: 2rem;
       }
     }
   }
-
   &__right {
-    grid-column: 9 / -1;
-    align-self: start;
-    justify-self: center;
-
     .infoTitle {
       color: $color-primary;
       font-size: 2.7rem;
       font-weight: 800;
       margin-top: 0rem;
+    }
+    .infoText {
+      font-size: 1.7rem;
     }
   }
 }
