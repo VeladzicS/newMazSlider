@@ -2,12 +2,12 @@
   .sliderSectionContainer__left {
     height: 44rem;
     @media only screen and (max-width: $bp-small-2) {
-      height: 34rem;
+      height: 38rem;
     }
     .slider__img {
       height: 20rem;
       @media only screen and (max-width: $bp-small-2) {
-        height: 15rem;
+        height: 17.5rem;
       }
     }
   }
@@ -24,6 +24,7 @@
 @media only screen and (max-width: $bp-large) {
   .sliderSectionContainer__right {
     .infoTitle {
+      margin-top: 2rem;
       text-align: center;
     }
   }

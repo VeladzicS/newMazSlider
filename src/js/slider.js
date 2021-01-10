@@ -1,7 +1,7 @@
 $(document).ready(function ($) {
   //Dinamicno mjenjanje Navbar SRC image i active class na osnovu hover-a
 
-  $(".nav__img").mouseenter(function () {
+  $(".nav__img").on("mouseenter", (function () {
     $(this).parent().addClass("active");
     $(this).parent().next().removeClass("active");
     if ($(this).hasClass("nav__img--prev")) {
@@ -12,9 +12,9 @@ $(document).ready(function ($) {
         .children()
         .attr("src", "assets/images/arrow-gray-right.png");
     }
-  });
+  }));
 
-  $(".nav__img").mouseleave(function () {
+  $(".nav__img").on("mouseleave", (function () {
     if ($(this).hasClass("nav__img--prev")) {
       $(this).parent().removeClass("active");
       $(this).parent().next().addClass("active");
@@ -25,7 +25,7 @@ $(document).ready(function ($) {
         .children()
         .attr("src", "assets/images/arrow-blue-right.png");
     }
-  });
+  }));
 
   //Glavna logika slidera je obrunta jer je u CSS za oba slidera dodan style "direction: rtl;"
 
@@ -38,6 +38,7 @@ $(document).ready(function ($) {
   ) {
     const firstImageWidth = $(sliderArray).first().children("img").outerWidth();
     const lastImageWidth = $(sliderArray).last().children("img").outerWidth();
+  //Klik na buttone navigacije isključen
     $(".nav__btn").each(function () {
       $(this).attr("disabled", true);
     });
@@ -61,7 +62,7 @@ $(document).ready(function ($) {
         parseInt($(sliderBox).css("left")) + firstImageWidth;
       //pomjera slider u desno za velicinu slike koja dolazi na prvo mjesto
 
-      $(sliderBox).animate({ left: moveSliderToRightOrLeft }, 400, function () {
+      $(sliderBox).animate({ left: moveSliderToRightOrLeft, complete: function() {alert("hi")} }, 400, function () {
         //pomjera prvu sliku u desno, a iduca slika po redu ide na prvo mjesto (obrnuto zbog CCS "direction:rtl;")
         $(lastElement).after($(firstElement));
 
@@ -70,6 +71,7 @@ $(document).ready(function ($) {
         $(sliderBox).css({ left: moveSliderVar, marginRight: moveSliderVar });
       });
     }
+    //Klik na buttone navigacije uključen po završetku animacije
     setTimeout(function () {
       $(".nav__btn").each(function () {
         $(this).removeAttr("disabled");

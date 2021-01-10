@@ -2,6 +2,7 @@
   width: 100%;
   height: 15vh;
   background: $color-background;
+  color: $color-primary;
   @include flex-center-items;
   &__title {
     font-size: 2.6rem;
