@@ -62,7 +62,7 @@ $(document).ready(function ($) {
         parseInt($(sliderBox).css("left")) + firstImageWidth;
       //pomjera slider u desno za velicinu slike koja dolazi na prvo mjesto
 
-      $(sliderBox).animate({ left: moveSliderToRightOrLeft, complete: function() {alert("hi")} }, 400, function () {
+      $(sliderBox).animate({ left: moveSliderToRightOrLeft }, 400, function () {
         //pomjera prvu sliku u desno, a iduca slika po redu ide na prvo mjesto (obrnuto zbog CCS "direction:rtl;")
         $(lastElement).after($(firstElement));
 
